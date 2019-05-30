@@ -8,7 +8,7 @@ public class Value {
     private static final int MIN_VALUE = 0;
     private static final int MAX_VALUE = 24;
 
-    private static final Map<Integer, Value> valueBox = new HashMap<>();
+    private static final Map<Integer, Value> reusalbeValues = new HashMap<>();
 
     private final int value;
 
@@ -23,11 +23,11 @@ public class Value {
         }
     }
 
-    public static Value assignValue(int value) {
-        if (!valueBox.containsKey(value)) {
-            valueBox.put(value, new Value(value));
+    public static Value getInstance(int value) {
+        if (!reusalbeValues.containsKey(value)) {
+            reusalbeValues.put(value, new Value(value));
         }
-        return valueBox.get(value);
+        return reusalbeValues.get(value);
     }
 
     public int getValue() {
